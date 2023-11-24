@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <div>
       <h2>
-        Biblioteca de Seriados
+        Catalogo de Seriados
         Inicio
       </h2>
     </div>
