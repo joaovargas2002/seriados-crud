@@ -16,4 +16,10 @@ export default class Seriado {
             this.descricao = descricao;
         }
 
+        static geraSeriadosMock() {
+            return [ new Seriado(1, "UPF em Dança", "masculino", "top", "10/11/2024", "teste"
+            ),
+            ]
+           }
+
 }

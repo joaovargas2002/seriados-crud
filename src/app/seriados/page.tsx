@@ -1,13 +1,11 @@
-import Layout from "../components/seriados/layout"
+import Layout from "@/app/components/seriados/layout"
+import Tabela from "@/app/components/seriados/tabela"
+import Seriado from "@/app/core/Seriado"
 
 export default function Seriados() {
+    const seriados = Seriado.geraSeriadosMock()
+
     return (
-        <div className={ `
-         flex justify-center items-center h-screen
-         bg-gradient-to-bl from-indigo-900 via-indigo-400 to-indigo-900
-         text-white`}>
-            <Layout titulo="Cadastro de Seriados">Conteúdo</Layout>
-        </div>
+        <Tabela seriados={seriados}/>
     )
 }
-
