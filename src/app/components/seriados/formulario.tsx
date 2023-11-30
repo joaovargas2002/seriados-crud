@@ -6,6 +6,8 @@ import Botao from "./botao";
 
 interface FormularioProps {
     seriado: Seriado
+    seriadoMudou?: (seriado: Seriado) => void
+    cancelado?: () => void
 }
 
 export default function Formulario(props: FormularioProps) {
@@ -22,14 +24,17 @@ export default function Formulario(props: FormularioProps) {
             <Entrada texto="Nome" valor={nome} onChange={setNome}></Entrada>
             <Entrada texto="Genero" valor={genero} onChange={setGenero}></Entrada>
             <Entrada texto="Avaliacao" valor={avaliacao} onChange={setAvaliacao}></Entrada>
-            <Entrada texto="DataLancamento" tipo="date" valor={stringParaEntradaDeData (dataLancamento)}
+            <Entrada texto="DataLancamento" tipo="date" valor={stringParaEntradaDeData(dataLancamento)}
                 onChange={setdataLancamento}></Entrada>
             <Entrada texto="Descricao" valor={descricao} onChange={setDescricao}></Entrada>
             <div className="flex-justify-end mt-5" >
-                <Botao className="mr-3" cor="bg-gradient-to-r from-blue-500 to-blue-700" >
+                <Botao className="mr-3" cor="bg-gradient-to-r from-blue-500 to-blue-700"
+                    onClick={() => props.seriadoMudou?.(new Seriado(
+                        id, nome, genero, avaliacao, dataLancamento, descricao))}>
                     {id ? 'Alterar' : 'Salvar'}
                 </Botao>
-                <Botao cor="bg-gradient-to-r from-gray-500 to-gray-700">
+                <Botao cor="bg-gradient-to-r from-gray-500 to-gray-700"
+                    onClick={props.cancelado}>
                     Cancelar
                 </Botao>
             </div>

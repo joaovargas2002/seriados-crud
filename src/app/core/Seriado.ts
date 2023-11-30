@@ -1,3 +1,5 @@
+import { stringParaEntradaDeData } from "@/utils/converters";
+
 export default class Seriado {
     id: number | null;
     nome: string;
@@ -21,5 +23,8 @@ export default class Seriado {
             ), new Seriado(2, "Bojack Horseman", "Animação", "3", "2014", "MAIS OU MENOS")
             ]
            }
-
+        
+        static vazio(): Seriado {
+            return new Seriado(null, "", "", "", stringParaEntradaDeData(""),"");
+        }
 }
