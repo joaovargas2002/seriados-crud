@@ -17,8 +17,8 @@ export default class Seriado {
         }
 
         static geraSeriadosMock() {
-            return [ new Seriado(1, "UPF em Dança", "masculino", "top", "10/11/2024", "teste"
-            ),
+            return [ new Seriado(1, "Breaking Bad", "Drama", "5", "2008", "MELHOR SERIE DA HISTORIA"
+            ), new Seriado(2, "Bojack Horseman", "Animação", "3", "2014", "MAIS OU MENOS")
             ]
            }
 

@@ -1,11 +1,35 @@
-import Layout from "@/app/components/seriados/layout"
-import Tabela from "@/app/components/seriados/tabela"
-import Seriado from "@/app/core/Seriado"
+'use client';
+import Layout from "../components/seriados/layout";
+import Seriado from "../core/Seriado";
+import Tabela from "../components/seriados/tabela";
+import Botao from "../components/seriados/botao";
+
+function seriadoSelecionado(seriado: Seriado) {
+    console.log(seriado.nome)
+}
+
+function seriadoExcluido(seriado: Seriado) {
+    console.log(seriado.nome)
+}
 
 export default function Seriados() {
+
     const seriados = Seriado.geraSeriadosMock()
 
     return (
-        <Tabela seriados={seriados}/>
+        <div className={`flex justify-center items-center h-screen
+    bg-gradient-to-bl from-indigo-900 via-indigo-400 to-indigo-900
+    text-white`}>
+            <Layout titulo="Cadastro de Eventos">
+                <div className="flex justify-end mb-4">
+                    <Botao cor="bg-gradient-to-r from-green-500 to-green-700">
+                        Novo Evento
+                    </Botao>
+                </div>
+                <Tabela seriados={seriados}
+                    seriadoSelecionado={seriadoSelecionado}
+                    seriadoExcluido={seriadoExcluido}></Tabela>
+            </Layout>
+        </div>
     )
 }
