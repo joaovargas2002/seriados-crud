@@ -3,6 +3,7 @@ import Layout from "../components/seriados/layout";
 import Seriado from "../core/Seriado";
 import Tabela from "../components/seriados/tabela";
 import Botao from "../components/seriados/botao";
+import Formulario from "../components/seriados/formulario";
 
 function seriadoSelecionado(seriado: Seriado) {
     console.log(seriado.nome)
@@ -29,6 +30,7 @@ export default function Seriados() {
                 <Tabela seriados={seriados}
                     seriadoSelecionado={seriadoSelecionado}
                     seriadoExcluido={seriadoExcluido}></Tabela>
+                    <Formulario seriado={seriados[0]}></Formulario>
             </Layout>
         </div>
     )
