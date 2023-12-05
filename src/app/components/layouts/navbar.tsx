@@ -1,4 +1,5 @@
 import React from "react";
+import Botao from "../seriados/botao";
 
 export default function Navbar (props: any) {
     return (
@@ -9,9 +10,16 @@ export default function Navbar (props: any) {
         <div className="mb-2 sm:mb-0">Review de Seriados</div>
         <div>
             <a href="/" className="text-lg no-underline hover:text-amver-300 ml-2">
-                Home</a>
+            <Botao cor="bg-gradient-to-r from-blue-700 to-blue-900">
+                Home
+                </Botao>
+                </a>
                 <a href="/seriados" className="text-lg no-underline hover:text-amver-300 ml-2">
-                Seriados</a></div>
+            <Botao cor="bg-gradient-to-r from-purple-700 to-purple-900">
+                Seriados
+                </Botao>
+                </a>
+                </div>
                 </nav>
         </>);}
     

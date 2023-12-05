@@ -85,7 +85,7 @@ export default function Seriados() {
   return (
     <div className={`
      flex justify-center items-center h-screen
-     bg-gradient-to-bl from-indigo-900 via-indigo-400 to-indigo-900
+     bg-gradient-to-bl from-blue-900 via-purple-900 to-purple-500
      text-white`}>
       <Layout titulo="Cadastro de seriados">
         {visivel === 'tabela' ? (
