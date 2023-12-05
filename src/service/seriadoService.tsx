@@ -22,7 +22,6 @@ export const fetchSeriados = async (): Promise<Seriado[]> => {
       novoSeriado.id = proximoId++;
       seriadosList.push(novoSeriado);
   
-      // Retorna o evento cadastrado
       return novoSeriado;
     } catch (error) {
       console.error("Erro ao cadastrar seriado:", error);

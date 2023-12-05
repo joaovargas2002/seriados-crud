@@ -30,7 +30,7 @@ export default function Seriados() {
   }, [visivel]);
 
 
-  function seriadoSelecionado(evento: Seriado) {
+  function seriadoSelecionado(seriado: Seriado) {
     setSeriado(seriado)
     setVisivel('form')
   }
@@ -51,11 +51,11 @@ export default function Seriados() {
     }
   }
 
-  function salvarOuAlterarSeriado(evento: Seriado) {
+  function salvarOuAlterarSeriado(seriado: Seriado) {
     if (seriado.id) {
       alterarSeriado(seriado)
     } else {
-      salvarSeriado(evento)
+      salvarSeriado(seriado)
     }
   }
 
