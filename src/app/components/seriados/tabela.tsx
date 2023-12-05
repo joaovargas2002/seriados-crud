@@ -1,6 +1,10 @@
 import Seriado from "@/app/core/Seriado";
 import { IconeEdicao, IconeLixo } from "../icones/tabela";
 import Seriados from "@/app/seriados/page";
+import Star from "../star";
+import { useState } from "react";
+
+const items: number[] = [...(new Array(5).keys() as any)]
 
 interface TabelaProps {
     seriados: Seriado[]
@@ -9,6 +13,19 @@ interface TabelaProps {
 }
 
 export default function Tabela(props: TabelaProps) {
+    const [activeIndices, setActiveIndices] = useState<number[]>([]);
+    const onClickStar = (index: number) => {
+        setActiveIndices((prevIndices) => {
+            if (prevIndices.includes(index)) {
+                // Se o índice já estiver presente, remova-o
+                return prevIndices.filter((i) => i !== index);
+            } else {
+                // Caso contrário, adicione-o
+                return [...prevIndices, index];
+            }
+        });
+    };
+
     const exibirAcoes = props.seriadoSelecionado || props.seriadoExcluido
     function renderHeader() {
         return (
@@ -30,7 +47,15 @@ export default function Tabela(props: TabelaProps) {
                 <td className="text-left p-3">{seriado.id}</td>
                 <td className="text-left p-3">{seriado.nome}</td>
                 <td className="text-left p-3">{seriado.genero}</td>
-                <td className="text-left p-3">{seriado.avaliacao}</td>
+                <td className="text-left p-3">
+                    {items.map((index) => (
+                        <Star
+                            onClick={() => onClickStar(index)}
+                            key={`star_index_${index}`}
+                            isActive={activeIndices.includes(index)}
+                        />
+                    ))}
+                </td>
                 <td className="text-left p-3">{seriado.dataLancamento}</td>
                 <td className="text-left p-3">{seriado.descricao}</td>
                 {exibirAcoes ? renderizarAcoes(seriado) : false}

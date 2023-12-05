@@ -1,13 +1,7 @@
 import Seriado from "@/app/core/Seriado";
 
 let seriadosList: Seriado[] = [
-    new Seriado(1, "Breaking Bad",
-    "Drama", "5", "2008-01-20","Melhor serie da história!"
-    ),
-
-    new Seriado(2, "Game of Throne",
-    "Medieval", "1", "2011-04-17","Melhor serie da história!"
-    ),
+ 
 ]
 
 let proximoId = seriadosList.length + 1;
